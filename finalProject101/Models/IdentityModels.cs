@@ -18,6 +18,13 @@ namespace finalProject101.Models
         }
     }
 
+
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() :base() { }
+        public ApplicationRole (string roleName) :base (roleName) { }
+
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -30,6 +37,8 @@ namespace finalProject101.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<finalProject101.Models.Vendor> Vendors { get; set; }
+       //   public System.Data.Entity.DbSet<finalProject101.Models.Vendor> Vendors { get; set; }
+
+//        public System.Data.Entity.DbSet<finalProject101.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }

@@ -247,6 +247,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -256,11 +257,16 @@
     <Compile Include="Migrations\202209221452285_InitialMigration.Designer.cs">
       <DependentUpon>202209221452285_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209231506251_role.cs" />
+    <Compile Include="Migrations\202209231506251_role.Designer.cs">
+      <DependentUpon>202209231506251_role.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -340,6 +346,12 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Account\Register1.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +372,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202209221452285_InitialMigration.resx">
       <DependentUpon>202209221452285_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209231506251_role.resx">
+      <DependentUpon>202209231506251_role.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

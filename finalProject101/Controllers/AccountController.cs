@@ -17,6 +17,8 @@ namespace finalProject101.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+      //  private ApplicationRoleManager _roleManager;
+
 
         public AccountController()
         {
@@ -27,6 +29,8 @@ namespace finalProject101.Controllers
             UserManager = userManager;
             SignInManager = signInManager;
         }
+
+
 
         public ApplicationSignInManager SignInManager
         {
