@@ -1,0 +1,67 @@
+﻿@model finalProject101.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ufname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ufname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ulname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uusername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uusername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Upassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Upassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Uid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

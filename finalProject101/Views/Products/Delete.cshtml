@@ -1,0 +1,97 @@
+﻿@model finalProject101.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vendors.Vaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendors.Vaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pyear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pyear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pmodel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pmodel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pdescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pdescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pimage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pimage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PnoOfItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PnoOfItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prating)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

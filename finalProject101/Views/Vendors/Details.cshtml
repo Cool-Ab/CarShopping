@@ -1,0 +1,51 @@
+﻿@model finalProject101.Models.Vendor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vendor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.users.Ufname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.users.Ufname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vshopname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vshopname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vbanknumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vbanknumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

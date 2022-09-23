@@ -1,0 +1,73 @@
+﻿@model finalProject101.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ufname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ufname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ulname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uusername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uusername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Upassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Upassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flag)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

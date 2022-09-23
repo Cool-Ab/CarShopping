@@ -1,0 +1,64 @@
+﻿@model IEnumerable<finalProject101.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ufname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uemail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uusername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Upassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ufname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uemail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uusername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Upassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Uid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Uid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Uid })
+        </td>
+    </tr>
+}
+
+</table>

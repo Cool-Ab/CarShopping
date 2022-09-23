@@ -1,0 +1,91 @@
+﻿@model finalProject101.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vendors.Vaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vendors.Vaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pyear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pyear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pmodel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pmodel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pdescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pdescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pimage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pimage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PnoOfItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PnoOfItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Pid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

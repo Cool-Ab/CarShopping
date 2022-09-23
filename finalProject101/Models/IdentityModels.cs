@@ -29,5 +29,7 @@ namespace finalProject101.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<finalProject101.Models.Vendor> Vendors { get; set; }
     }
 }
