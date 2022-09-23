@@ -37,8 +37,10 @@ namespace finalProject101.Models
             return new ApplicationDbContext();
         }
 
-       //   public System.Data.Entity.DbSet<finalProject101.Models.Vendor> Vendors { get; set; }
+      //  public System.Data.Entity.DbSet<finalProject101.Models.RoleViewModel> RoleViewModels { get; set; }
 
-//        public System.Data.Entity.DbSet<finalProject101.Models.RoleViewModel> RoleViewModels { get; set; }
+         //  public System.Data.Entity.DbSet<finalProject101.Models.Vendor> Vendors { get; set; }
+
+        //        public System.Data.Entity.DbSet<finalProject101.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }

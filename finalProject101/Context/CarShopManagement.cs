@@ -17,6 +17,6 @@ namespace finalProject101.Context
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Product> Products { get; set; }
 
-
+        public System.Data.Entity.DbSet<finalProject101.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
