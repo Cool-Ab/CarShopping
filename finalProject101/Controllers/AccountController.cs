@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using finalProject101.Models;
+using System.Collections.Generic;
 
 namespace finalProject101.Controllers
 {
@@ -17,20 +18,31 @@ namespace finalProject101.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-      //  private ApplicationRoleManager _roleManager;
+        private ApplicationRoleManager _roleManager;
 
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
         }
 
-
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
 
         public ApplicationSignInManager SignInManager
         {
@@ -143,6 +155,10 @@ namespace finalProject101.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var role in RoleManager.Roles)
+                list.Add(new SelectListItem() {Value= role.Name, Text =role.Name });
+            ViewBag.Roles = list;
             return View();
         }
 
@@ -155,12 +171,14 @@ namespace finalProject101.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

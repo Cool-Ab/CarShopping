@@ -75,18 +75,20 @@ namespace finalProject101.Controllers
         public async Task<ActionResult> Details(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
+             
             return View(new RoleViewModel(role));
         }
         public async Task<ActionResult> Delete(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
+            
             return View(new RoleViewModel(role));
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            var role = await RoleManager.FindByIdAsync(id);
+            
+               var role = await RoleManager.FindByIdAsync(id);
             await RoleManager.DeleteAsync(role);
             return RedirectToAction("Index");
         }

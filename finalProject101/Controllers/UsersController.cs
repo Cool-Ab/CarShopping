@@ -16,6 +16,7 @@ namespace finalProject101.Controllers
         private CarShopManagement db = new CarShopManagement();
 
         // GET: Users
+
         public ActionResult Index()
         {
             return View(db.Users.ToList());

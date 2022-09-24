@@ -8,6 +8,7 @@ namespace finalProject101.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
@@ -26,5 +27,12 @@ namespace finalProject101.Controllers
 
             return View();
         }
+
+        public ActionResult Role()
+        {
+
+            return View();
+        }
+
     }
 }
