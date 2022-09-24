@@ -51,6 +51,7 @@ namespace finalProject101.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(RoleViewModel model)
         {
             var role = new ApplicationRole() { Name = model.Name };
@@ -64,10 +65,11 @@ namespace finalProject101.Controllers
             return View(new RoleViewModel(role));
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(RoleViewModel model)
         {
             var role = new ApplicationRole() {Id=model.Id, Name = model.Name };
-            await RoleManager.CreateAsync(role);
+            await RoleManager.UpdateAsync(role);
             return RedirectToAction("Index");
         }
         public async Task<ActionResult> Details(string id)
@@ -80,20 +82,13 @@ namespace finalProject101.Controllers
             var role = await RoleManager.FindByIdAsync(id);
             return View(new RoleViewModel(role));
         }
-                [HttpPost]
-        public async Task<ActionResult> DeleteConfirmation(string id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
             await RoleManager.DeleteAsync(role);
             return RedirectToAction("Index");
         }
-
-
-
-
-
-
-
-
     }
 }
